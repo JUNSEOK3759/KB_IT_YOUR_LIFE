@@ -1,0 +1,35 @@
+<!--  
+자바스크립트에서의 onload함수와 동일한 기능을 하는
+JQuery함수는 document.ready()
+
+ready()함수는 하나의 문서에 여러번 사용가능하다.
+대신에 반드시 jquery cdn이 선언되어져 있어야 한다.
+-->
+
+<!DOCTYPE html>
+<html>    
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function (){
+            //1. 복합 연산자
+            var list = '';
+            list += '<ul>';
+            list += '<li>Hello</li>';
+            list += '<li>JavaScript!!</li>';
+            list += '</ul>';
+
+            //2. 화면에 출력하는 기능.. innerHTML
+            document.body.innerHTML = list
+            });
+            
+            $(document).ready(function(){
+                alert('aaa')
+            });
+        </script>
+
+    </head>
+   <body>      
+        <h2>====== onload ======</h2>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        #calc {
+            border: 2px solid black;
+
+            width: 350px;
+        }
+
+        #formula {
+            text-align: right;
+            width : 320px;
+        }
+
+
+        button {
+            width: 70px;
+            height: 70px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="calc">
+        <input type="text" id="formula" value="" placeholder="0.0" readonly />
+        <div id="pad">
+            <div id='key1'>
+                <button onclick="addNum(7)">7</button>
+                <button onclick="addNum(8)">8</button>
+                <button onclick="addNum(9)">9</button>
+                <button onclick="addOper('+')">+</button>
+            </div>
+
+            <div id='key2'>
+                <button onclick="addNum(4)">4</button>
+                <button onclick="addNum(5)">5</button>
+                <button onclick="addNum(6)">6</button>
+                <button onclick="addOper('-')">-</button>
+            </div>
+            <div id='key3'>
+                <button onclick="addNum(1)">1</button>
+                <button onclick="addNum(2)">2</button>
+                <button onclick="addNum(3)">3</button>
+                <button onclick="addOper('*')">*</button>
+            </div>
+            <div id='key4'>
+                <button onclick="addNum(0)">0</button>
+                <button onclick="reset()">CE</button>
+                <button onclick="calc()">=</button>
+                <button onclick="addOper('/')">/</button>
+            </div>
+        </div>
+        <div id="resultDiv">
+            <h2>결 과 이 력</h2>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        function addNum(a) {
+            document.getElementById("formula").value += a;
+        }
+
+        function addOper(x) {
+            if (x == '+' || x == '-' || x == '*' || x == '/') {
+                document.getElementById("formula").value += x;
+                if (x == '+' || x == '-' || x == '*' || x == '/') {
+                    x = x;
+                }
+            }
+        }
+        function reset() {
+            let a = document.getElementById("formula");
+            a.value = "";
+        }
+        let count = 0;
+        function calc() {
+            let a = document.getElementById("formula");
+            let x = document.getElementById('result');
+
+            x.innerHTML += "<p>" + (++count) + '. ' + a.value + " = " + eval(a.value) + '</br>';
+            a.value = " ";
+        }
+
+    </script>
+</body>
+
+</html>

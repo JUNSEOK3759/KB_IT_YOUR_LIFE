@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+    
+        <script>
+            /*
+            window.onload함수는 html의 모든 컨텐츠가 로드된 후에 실행되는 함수
+            동일한 문서에 오직 단 한 개만 존재 가능하다.
+            */
+            window.onload = function () {
+                //1. 복합 연산자
+                var list = '';
+                list += '<ul>';
+                list += '<li>Hello</li>';
+                list += '<li>JavaScript!!</li>';
+                list += '</ul>';
+
+                //2. 화면에 출력하는 기능.. innerHTML
+                document.body.innerHTML = list
+            }
+        </script>
+
+    </head>
+   <body>      
+        <h2>====== onload ======</h2>
+    </body>
+</html>
