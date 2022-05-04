@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+			//입력폼을 선택자로 지정...
+			$('input[name=userName]').val('James')
+			$('input[name=userAddr]').val('NewYork')
+
+		});
+	</script>
+</head>
+
+<body>
+	<form action="#" method="get">
+		<!-- get은 페이지 연결이 목적이다.
+		action은 입력된 값이 들어가는 곳
+		
+		1. get -> get it의 줄임말으로써 단순한 페이지 연결이다
+		데이터 전달이 목적이 아니다.
+		폼값이 주소창에 노출되어서 전달 
+	
+		2. post -> post office의 줄임말이다.
+	 	데이터를 서버로 보낼테니 서버는 데이터를 처리한 결과를 
+		나한테 돌려주라는 의미이다.-->
+		Name <input type="text" name="userName"><br />
+		Addr <input type="text" name="userAddr"><br />
+		<input type="submit">
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+
+			
+			$('#addOptionBtn').one('click',function () {
+				var arr = ['강호동', '이수근','서장훈', '민경훈', '김희철', '김영철', '이상민'];
+				// 각각의 배열 값들을 each함수를 사용해서 option 태그의 값으로 연결
+				$.each(arr, function (index, item) {
+					var option = '<option value =' + item + '>' + item + '</option>';
+					$('#friend').append(option);
+				})
+
+				// $(this).unbind();
+			}) //click
+
+			$('#deleteOptionBtn').click(function () {
+				$('#friend>option').remove();
+			})
+		});
+	</script>
+</head>
+
+<body>
+	<input type="button" value="옵션 생성" id="addOptionBtn">
+	<input type="button" value="옵션 삭제" id="deleteOptionBtn">
+	<select id="friend"></select>
+</body>
+
+</html>

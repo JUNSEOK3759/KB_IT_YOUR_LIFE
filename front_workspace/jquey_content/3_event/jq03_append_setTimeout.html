@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		.angel {
+			border: 2px solid black;
+			width: 200px;
+			height: 240px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+			$('img').addClass('angel');
+
+			//1. setTimeout() 함수를 이용해서 3초뒤에 맨 첫번째 이미지가 맨 뒤에 가도록(body..뒤에..append)
+			//setTimeout함수 특징은 단 한번만 호출된다.
+			// setTimeout(function() {
+			// 	// 첫 번째 이미지를 맨뒤에 ....body 뒤에 붙인다...
+			// 	// $('body').append($('img').first());
+
+			// 	// $('img').first().append('body');
+			// 	// append는 태그에 내용을 부착할 때만 사용한다.
+			// 	// 위의 코드는 내용에 태그를 부착하는 것이기 때문에 동작하지 않는다.
+
+			// 	// 위처럼 하려면 appendTo를 써야한다.
+			// 	$('img').first().appendTo('body');
+
+			// 	// $('body').append($('img:eq(0)'));
+			// }, 3000);
+
+
+			//2. setInterval()...특정한 시간을 간격으로 매번 호출되는 함수....
+
+			setInterval(function () {
+				$('img').first().appendTo('body');
+			}, 1000)
+
+		});
+	</script>
+</head>
+
+<body>
+	<img alt="" src="./image/1.jpg">
+	<img alt="" src="./image/2.jpg">
+	<img alt="" src="./image/3.jpg">
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 숨기기 hide() | 이미지 보이기 show() </title>
+    <style type="text/css">
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //1. 일단 이미지를 숨긴다. hide()
+            $('#imageView').hide();
+            $('#mouseIn').css('background', 'yellow');
+
+            //2. hober()함수 사용해서 이미지 슬라이딩 ...
+            $('#mouseIn').hover(function () {
+                // $('#imageView').show();
+                $('#imageView').fadeIn(3000);
+            },
+            function () {
+                // $('#imageView').hide();
+                $('#imageView').fadeOut(3000);
+            }
+            )
+
+        });
+    </script>
+</head>
+
+<body>
+    <h2 id="mouseIn">++++++++++++++ 사진 보기 +++++++++++++++++</h2>
+    <div id = 'imageView'>
+        <img src='./image/1.jpg' width='300px' height = '400px'>
+
+    </div>
+</body>
+
+</html>

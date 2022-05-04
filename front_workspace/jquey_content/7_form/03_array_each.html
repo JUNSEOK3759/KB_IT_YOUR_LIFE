@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+			$('#eachBtn').click(function () {
+				var array = [];
+				array.push('강호동')
+				array.push('강호동1')
+				array.push('유재석')
+				array.push('강호동3')
+				array.push('강호동4')
+
+				// alert(array.length)
+				// alert(array.toString())
+				
+
+				//2. js for문을 jquery에서는 each로 사용한다.
+				var data = ''
+				// $(array).each(function(index) {
+				// 	data += array[index] + '';
+					
+				// })
+				// alert(data);
+
+				// $.each(array, function(index) {
+				// 	data += array[index] + '';
+				// })
+				// alert(data);
+				$.each(array, function(index, item) {
+					data += item + ' ';
+				})
+				alert(data);
+				alert($.inArray('유재석', array))
+				// 내가 만든 배열에 '유재석'이 있으면 해당 인덱스 리턴
+				// 없으면 -1
+			})
+		});
+	</script>
+</head>
+
+<body>
+	<input type="button" value="배열에 each() 적용" id="eachBtn">
+</body>
+
+</html>

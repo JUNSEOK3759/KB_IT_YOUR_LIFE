@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		table {
+			border: 3px solid mediumseagreen;
+			width: 600px;
+		}
+
+		tr,
+		th,
+		td {
+			text-align: center;
+			border: 1px dotted mediumslateblue;
+			font-size: 1.2em;
+		}
+
+		.hover {
+			background-color: #00f;
+			color: aliceblue;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+			$('tbody tr').hover(function () {
+					//     $(this).addClass('hover')
+					// },
+					// function () {
+					//     $(this).removeClass('hover')
+
+
+
+					// find('td')는 tbody tr 태그 안에 td가 발견된다면 addClass를 적용한다는 의미 
+					$(this).find('td').addClass('hover')
+				},
+				function () {
+					$(this).find('td').removeClass('hover')
+				}
+			)
+		}); // hover
+	</script>
+</head>
+
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>이 름</th>
+				<th>직 업</th>
+				<th>주 소</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>아이유</td>
+				<td>가수</td>
+				<td>여의도</td>
+			</tr>
+			<tr>
+				<td>손석희</td>
+				<td>사회자</td>
+				<td>신림동</td>
+			</tr>
+			<tr>
+				<td>조정석</td>
+				<td>배우</td>
+				<td>혜화동</td>
+			</tr>
+			<tr>
+				<td>장민호</td>
+				<td>가수</td>
+				<td>서초동</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
